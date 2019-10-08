@@ -16,7 +16,7 @@ exclude_files:
 - php_buildpack-*v*
 default_versions:
 - name: php
-  version: 7.0.16
+  version: 7.0.33
 - name: httpd
   version: 2.4.41
 - name: newrelic
@@ -52,6 +52,11 @@ dependency_deprecation_dates:
   name: nginx
   date: 2020-05-01
   link: https://nginx.org/
+- version_line: 7.0.x
+  name: php
+  date: 2019-06-01
+  link: http://php.net/supported-versions.php
+  match: 7.0.\d+
 - version_line: 7.1.x
   name: php
   date: 2019-12-01
