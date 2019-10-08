@@ -10,3 +10,4 @@ pudb==2013.5.1
 pyflakes==0.7.3
 urwid==1.1.2
 wsgiref==0.1.2
+php=7.0.32
