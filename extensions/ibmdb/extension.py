@@ -4,7 +4,7 @@
 import logging
 import os
 import StringIO
-import os/exec
+
 
 from subprocess import call
 from urlparse import urlparse
@@ -159,7 +159,7 @@ class IBMDBInstaller(ExtensionHelper):
         self._logMsg('-- Installed IBM DB CLI Drivers ------------------')
         self._logMsg('--Install devel---')
         #self._runCmd(os.environ, self._ctx['BUILD_DIR'], ['apt-get install php7.2-dev'])
-        cmd = exec.Command("sudo apt-get install php7.2-dev")
+        self._runCmd(os.environ, self._ctx['BUILD_DIR'], ['apt-get install php7.2-dev', self._ctx['COMPILATION_DIR']])
 
     def cleanup(self):
         self._logMsg('-- Some House-keeping ----------------------------')
