@@ -23,4 +23,9 @@
 BP=$(dirname $(dirname $0))
 export PYTHONPATH=$BP/lib
 
+
+
 python $BP/scripts/release.py $1
+
+echo "Installing ibm_db2 ..."
+pecl install ibm_db2
