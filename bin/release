@@ -24,8 +24,8 @@ BP=$(dirname $(dirname $0))
 export PYTHONPATH=$BP/lib
 
  
-  install php-devel
-  install php-pear
+  apt-get install php-devel
+  apt-get install php-pear
   pecl install ibm_db2
 
 python $BP/scripts/release.py $1
