@@ -469,6 +469,7 @@ dependencies:
   - yaml
   - zip
   - zlib
+  - ibm_db2
 - name: php
   version: 7.2.21
   uri: https://buildpacks.cloudfoundry.org/dependencies/php/php7-7.2.21-linux-x64-cflinuxfs2-3dd8cc4d.tgz
