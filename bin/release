@@ -44,7 +44,7 @@ PHP_PATH="php"
 BIN_DIR=$(dirname $0)
 BUILD_DIR=$1
 CACHE_DIR=$2
-LP_DIR=`cd $(dirname $0); cd ..; pwd`
+
 
 
 
@@ -97,17 +97,7 @@ cd $BUILD_DIR/autoconf-2.69
 make
 make install
 
-cd $BUILD_DIR
 
-ln -s $BUILD_DIR/autoconf-2.10
-ln -s $BUILD_DIR/php /app/php
-ln -s $BUILD_DIR/vendor /app/vendor
-
-export PATH=$BUILD_DIR/autoconf/bin:/app/php/bin:$PATH
-export IBM_DB_HOME=$BUILD_DIR/clidriver
-export LD_LIBRARY_PATH=/app/vendor/mcrypt/lib:$LD_LIBRARY_PATH
-export PHP_AUTOCONF=$BUILD_DIR/autoconf/bin/autoconf
-export PHP_AUTOHEADER=$BUILD_DIR/autoconf/bin/autoheader
 
 echo "Installing ibm_db2 ..."
 pecl install ibm_db2
