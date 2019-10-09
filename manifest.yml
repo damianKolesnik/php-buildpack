@@ -16,7 +16,7 @@ exclude_files:
 - php_buildpack-*v*
 default_versions:
 - name: php
-  version: 7.1.32
+  version: 7.2.22
 - name: httpd
   version: 2.4.41
 - name: newrelic
@@ -394,7 +394,7 @@ dependencies:
   uri: https://buildpacks.cloudfoundry.org/dependencies/php/php7-7.1.32-linux-x64-cflinuxfs3-644ed4cf.tgz
   sha256: 644ed4cfccb1a3be393807cf07fefe9bfeab477501629c44509b1a52063555ee
   cf_stacks:
-  - cflinuxfs2
+  - cflinuxfs3
   source: https://php.net/distributions/php-7.1.32.tar.gz
   source_sha256: 6e51a2fc610352438b2a1c40310468a1e2b5baf2fff43be77f9f408a9111590c
   modules:
@@ -780,6 +780,7 @@ dependencies:
   - yaml
   - zip
   - zlib
+  - ibm_db2
 - name: php
   version: 7.3.8
   uri: https://buildpacks.cloudfoundry.org/dependencies/php/php7-7.3.8-linux-x64-cflinuxfs3-6b2c296c.tgz
