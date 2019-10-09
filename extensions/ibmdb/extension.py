@@ -156,8 +156,8 @@ class IBMDBInstaller(ExtensionHelper):
         self._compilationEnv['IBM_DB_HOME'] = self._ctx['IBMDBCLIDRIVER_INSTALL_DIR']
         self._logMsg('-- Installed IBM DB CLI Drivers ------------------')
        # self._runCmd(os.environ, self._ctx['BUILD_DIR'], ['su apt-get install php-devel'])
-       self._logMsg('--Install devel---')
-       call([ 'apt-get install php-devel',  self._ctx['IBMDBCLIDRIVER_INSTALL_DIR'] ])
+        self._logMsg('--Install devel---')
+        call([ 'apt-get install php-devel',  self._ctx['IBMDBCLIDRIVER_INSTALL_DIR'] ])
 
 
     def cleanup(self):
