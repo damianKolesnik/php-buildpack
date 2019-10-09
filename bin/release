@@ -22,7 +22,26 @@
 #  python scripts, like install Python.
 BP=$(dirname $(dirname $0))
 export PYTHONPATH=$BP/lib
+set -e
 
+# Heroku Revision.
+#
+# Affixed to all vendored binary output to represent changes to the
+# compilation environment without a change to the upstream version,
+# e.g. PHP 5.3.27 without, and then subsequently with, libmcrypt.
+heroku_rev='-2'
+
+# config
+MCRYPT_VERSION="2.5.8"
+APACHE_VERSION="2.2.25"
+APACHE_PATH="apache"
+PHP_VERSION="5.3.27"
+PHP_PATH="php"
+
+BIN_DIR=$(dirname $0)
+BUILD_DIR=$1
+CACHE_DIR=$2
+LP_DIR=`cd $(dirname $0); cd ..; pwd`
 
 function download_and_install_ibm_db() {
   CLI_URL="https://public.dhe.ibm.com/ibmdl/export/pub/software/data/db2/drivers/odbc_cli/linuxx64_odbc_cli.tar.gz"
