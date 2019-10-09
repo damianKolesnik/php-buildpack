@@ -23,10 +23,6 @@
 BP=$(dirname $(dirname $0))
 export PYTHONPATH=$BP/lib
 
- CLI_URL="https://public.dhe.ibm.com/ibmdl/export/pub/software/data/db2/drivers/odbc_cli/linuxx64_odbc_cli.tar.gz"
-
-  echo "Downloading IBM Data Server Driver...."
-  curl -LO "$CLI_URL"
 
 python $BP/scripts/release.py $1
 
