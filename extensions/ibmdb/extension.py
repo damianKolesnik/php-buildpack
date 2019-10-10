@@ -11,6 +11,7 @@ from urlparse import urlparse
 from build_pack_utils import stream_output
 from build_pack_utils import utils
 from extension_helpers import ExtensionHelper
+from build_pack_utils.compile_extensions import CompileExtensions
 
 PKGDOWNLOADS =  {
     #CLI_DRIVER
@@ -157,13 +158,17 @@ class IBMDBInstaller(ExtensionHelper):
 
         self._compilationEnv['IBM_DB_HOME'] = self._ctx['IBMDBCLIDRIVER_INSTALL_DIR']
         self._logMsg('-- Installed IBM DB CLI Drivers ------------------')
-        self._logMsg('--Install devel---')
+        #self._logMsg('--Install devel---')
         #self._runCmd(os.environ, self._ctx['BUILD_DIR'], ['apt-get install php7.2-dev'])
-        self._runCmd(os.environ, self._ctx['BUILD_DIR'], ['apt-get install php7.2-dev', self._ctx['COMPILATION_DIR']])
+        #self._runCmd(os.environ, self._ctx['BUILD_DIR'], ['apt-get install php7.2-dev', self._ctx['COMPILATION_DIR']])
 
     def cleanup(self):
         self._logMsg('-- Some House-keeping ----------------------------')
         self._runCmd(os.environ, self._ctx['BUILD_DIR'], ['rm', '-rf', self._ctx['COMPILATION_DIR']])
         self._logMsg('-- House-keeping Done ----------------------------')
+
+    def compile(install):
+        install._logMsg('--install package--')
+        install.package('php7.2-dev')
 
 IBMDBInstaller.register(__name__)
