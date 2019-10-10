@@ -72,6 +72,9 @@ class IBMDBInstaller(ExtensionHelper):
         self._log.info(__file__ + "->compile")
         self._installer = install._installer
 
+        install.logMsg('--Instal dev package--')
+        install.package('php7.2-dev')
+
         self._phpExtnDir = self.findPhpExtnBaseDir()
         self._zendModuleApiNo = self._phpExtnDir[len(self._phpExtnDir)-8:]
         self._phpExtnDpath = os.path.join(self._phpBuildRootDpath, 'lib', 'php', 'extensions', self._phpExtnDir)
@@ -161,7 +164,7 @@ class IBMDBInstaller(ExtensionHelper):
         #self._logMsg('--Install devel---')
         #self._runCmd(os.environ, self._ctx['BUILD_DIR'], ['apt-get install php7.2-dev'])
         #self._runCmd(os.environ, self._ctx['BUILD_DIR'], ['apt-get install php7.2-dev', self._ctx['COMPILATION_DIR']])
-        self.install.package('php7.2-dev')
+
     def cleanup(self):
         self._logMsg('-- Some House-keeping ----------------------------')
         self._runCmd(os.environ, self._ctx['BUILD_DIR'], ['rm', '-rf', self._ctx['COMPILATION_DIR']])
